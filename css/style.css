@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap');
+
+:root {
+  --text-primary: #29455f;
+  --text-secundary: #808080;
+  --selected-color: #B5db48;
+  --red: #FF3838;
+  --green: #B5DB48;
+  --blue: #3864FF;
+  --toggleIcon: #1f2937;
+  --border-color: #f3f4f6;
+}
+
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.dark {
+  --toggleIcon: #9ca3af;
+  --text-primary: #d1d5db;
+  --text-secundary: #e5e7eb;
+  --border-color: #f3f4f6;
+  background: #17253b url('../assets/background.png') no-repeat 50% 50%;
+
+}
+
+
+/* Change Mode */
+
+.toggle-color-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: calc(1rem + 1.5% + 2px) calc(3% + 1rem) 0 0;
+  z-index: 99;
+}
+
+
+input,
+input:checked {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  transition: all .45s ease;
+}
+
+input:checked {
+  border-radius: 50%;
+  border: 4px solid var(--toggleIcon);
+  background-color: var(--toggleIcon);
+  transform: scale(.55);
+  overflow: visible;
+  box-shadow: none;
+}
+
+input[type=checkbox]{
+  appearance: none!important;
+}
+
+input{
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  transform: scale(1);
+  overflow: hidden;
+  box-shadow: inset 8px -8px 0 0 var(--toggleIcon);
+}
+
+input:checked:before {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: -9px;
+  height: 24px;
+  width: 24px;
+  border: 2px solid var(--toggleIcon);
+  border-radius: 50%;
+  transform: translate(14px,-14px);
+  opacity: 0;
+  transition: transform .45s ease;
+}
+
+
+input:before {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: -9px;
+  height: 24px;
+  width: 24px;
+  border: none;
+  border-radius: 50%;
+  transform: translate(0);
+  opacity: 1;
+  transition: transform .45s ease;
+}
+
+input:checked:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: -4px 0 0 -4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 -23px 0 var(--toggleIcon),0 23px 0 var(--toggleIcon),23px 0 0 var(--toggleIcon),-23px 0 0 var(--toggleIcon),15px 15px 0 var(--toggleIcon),-15px 15px 0 var(--toggleIcon),15px -15px 0 var(--toggleIcon),-15px -15px 0 var(--toggleIcon);
+  transform: scale(1);
+  transition: all .35s ease;
+}
+
+input:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: -4px 0 0 -4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 -23px 0 var(--toggleIcon),0 23px 0 var(--toggleIcon),23px 0 0 var(--toggleIcon),-23px 0 0 var(--toggleIcon),15px 15px 0 var(--toggleIcon),-15px 15px 0 var(--toggleIcon),15px -15px 0 var(--toggleIcon),-15px -15px 0 var(--toggleIcon);
+  transform: scale(0);
+  transition: all .35s ease;
+}
+
+
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+
+.card {
+  width: 263px;
+  height: 386px;
+  box-shadow: 0px 4px 42px rgba(0 , 0, 0, 0.25);
+  backdrop-filter: blur(42px);
+  border-radius: 16px 50px 16px 16px;
+  position: relative;
+}
+
+.card .shoes {
+  position: absolute;
+  top: -200px;
+  right: -140px;
+  z-index: 1;
+}
+
+
+
+.card .shadow{
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 50px 16px 16px;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.card .shadow::after{
+  content: "";
+  display: block;
+  width: 400px;
+  height: 300px;
+  background: linear-gradient(114.61deg, rgba(196, 196, 196, 0.3) -19.56%, rgba(196, 196, 196, 0) 120%);
+  border-radius: 50%;
+  position: absolute;
+  top: -160px;
+  left: -20px;
+  transform: rotate(20deg);
+  
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  padding: 115px 20px 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card-content .subtitle {
+  color: var(--selected-color);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.card-content .title {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 32px;
+  color: var(--text-primary);
+}
+
+.card-content .price {
+  margin-top: 10px;
+  text-align: right;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+  color: var(--text-primary);
+
+}
+
+.card-content .price span {
+  font-size: 14px;
+  color: var(--text-secundary);
+  margin-right: 2px;
+}
+
+
+.actions-container {
+  display: flex;
+}
+
+.shoes-options {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+
+.shoes-options p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text-secundary);
+}
+
+/* Color Shoes */
+
+.color-options {
+  display: flex;
+  margin: 10px 0;
+}
+
+.color-options .color {
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+
+.actions-container.dark .color-options .color {
+  border: 1px solid white;
+}
+
+.actions-container.dark .color-options .color.selected,
+.color-options .color.selected {
+  border: none;
+  width: 21px;
+  height: 21px;
+  position: relative;
+  transition: transform 1s ;
+}
+
+
+.color:hover {
+  transition: transform 1s ;
+  transform: scale(1.2);
+
+}
+
+.color.selected:hover {
+  transition: transform 1s ;
+  transform: scale(1);
+
+}
+
+
+.color-options .color.selected::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid rgba(0 , 0, 0, 0.6);
+  top: -3px;
+  left: -3px;
+}
+
+.actions-container.dark .color-options .color.selected::after {
+  border: 1px solid  var(--border-color);
+}
+
+
+
+.color-options .color +.color {
+  margin-left: 25px;
+}
+
+.color-options .color:nth-child(1){
+  background: var(--green);
+}
+
+.color-options .color:nth-child(2){
+  background: var(--red);
+}
+
+.color-options .color:nth-child(3){
+  background: var(--blue);;
+}
+
+
+img {
+  animation: anima 0.2s alternate;
+  /* anima */
+}
+
+@keyframes anima {
+  0% {
+    transform: scale(0.5);
+    filter: opacity(0%);
+  }
+
+  100% {
+    transform: scale(1);
+    filter: opacity(100%);
+  }
+}
+
+/* Size Shoes */
+
+.size-options {
+  display: flex;
+  margin: 10px 0;
+}
+
+.size-options .size {
+  width: 23px;
+  height: 23px;
+  border: 1px solid rgba(0 , 0, 0, 0.4);
+  border-radius: 8px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--text-secundary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.actions-container.dark .size-options .size {
+  border: 1px solid white;
+}
+
+.size-options .size.selected {
+  background: var(--selected-color);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+}
+
+.size-options .size + .size {
+  margin-left: 10px;
+}
+
+
+/* Button Buy*/
+.actions-container .cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.actions-container .cart button{
+  width: 49px;
+  height: 80px;
+  background: var(--selected-color);
+  border-radius: 16px;
+  border: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.expand{
+  animation: dots 0.5s infinite alternate;
+}
+
+
+
+.card button img:nth-child(1){
+  animation-delay: 0.1s;
+}
+
+.card button img:nth-child(2){
+  animation-delay: 0.3s;
+}
+
+.card button img:nth-child(3){
+  animation-delay: 0.5s;
+}
+
+@keyframes dots {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.shop-cart {
+  margin-top: 4px;
+}

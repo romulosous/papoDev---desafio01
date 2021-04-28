@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <label class="toggle-color-btn">
+    <input type="checkbox" id="checkbox" class="toogle-color-mode">
+  </label>
+  <div class="container">
+    <div class="card">
+      <img class="shoes" src="/assets/Tenis-green.svg" alt="Tênis">
+      <div class="shadow"></div>
+      <div class="card-content">
+        <p class="subtitle">Nike</p>
+        <h3 class="title">Epic React Flyknit 2</h3>
+        <p class="price"><span>R$</span> 359,00</p>
+
+        <div class="actions-container">
+          <div class="shoes-options">
+            <p>Cores:</p>
+            <div class="color-options">
+              <div onclick="changeColor(this, '#B5DB48')" id="green" class="color selected"></div>
+              <div onclick="changeColor(this,'#FF3838' )" id="red" class="color"></div>
+              <div onclick="changeColor(this, '#3864FF')" id="blue" class="color"></div>
+            </div>
+
+            <p>Tamanhos:</p>
+            <div class="size-options">
+              <div onclick="changeSize(this)" class="size selected">38</div>
+              <div onclick="changeSize(this)" class="size">39</div>
+              <div onclick="changeSize(this)" class="size">40</div>
+              <div onclick="changeSize(this)" class="size">41</div>
+            </div>
+
+          </div>
+          <div class="cart">
+            <button>
+              <img class="expand" src="assets/expand.svg" style="opacity: 0.2;" alt="">
+              <img class="expand" src="assets/expand.svg" style="opacity: 0.4;" alt="">
+              <img class="expand" src="assets/expand.svg" style="opacity: 0.8;" alt="">
+              <div class="shop-cart">
+                <img src="assets/store.svg" alt="">
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
