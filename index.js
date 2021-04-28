@@ -22,7 +22,7 @@ function changeColor (element, color) {
   })
 
   const id = element.getAttribute('id')
-  img.src = `/assets/Tenis-${id}.svg`
+  img.src = `./assets/Tenis-${id}.svg`
   img.style.animation = 'none'
 
   setTimeout(() => {
