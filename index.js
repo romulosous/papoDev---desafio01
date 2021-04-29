@@ -54,6 +54,7 @@ function changeBackground () {
 function modal () {
   const modalOverlay = document.querySelector('.modal-overlay')
 
+  // ssss
   document.querySelector('.close-modal').addEventListener('click', function () {
     modalOverlay.classList.remove('active')
   })
