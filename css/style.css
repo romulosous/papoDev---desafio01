@@ -424,3 +424,88 @@ img {
 .shop-cart {
   margin-top: 4px;
 }
+
+/* Modal */
+
+.modal-overlay{
+  background-color: rgba(0, 0, 0, 0.7);;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  opacity: 0; 
+  visibility: hidden;
+}
+
+.modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.warning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  margin-top: 6vh;
+  text-align: center;
+  /* position: absolute;
+  top: 5%; */
+}
+
+.warning p span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  margin: 0;
+
+}
+
+.modal {
+  background-color: white;
+  max-width: 500px;
+  height: 300px;
+  margin: 14vh auto;
+  position: relative;
+}
+
+@media (max-width:600px) {
+  .modal {
+    width: 80%;
+  }
+}
+
+
+.modal .close-modal {
+  color: black;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+}
+
+
+/* Social media */
+ul {
+  height: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  
+}
+
+li{
+  margin: 20px;
+  font-size: 24px;
+}
