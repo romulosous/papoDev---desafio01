@@ -70,6 +70,7 @@ input{
   transform: scale(1);
   overflow: hidden;
   box-shadow: inset 8px -8px 0 0 var(--toggleIcon);
+  cursor: pointer;
 }
 
 input:checked:before {
